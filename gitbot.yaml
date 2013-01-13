@@ -1,0 +1,22 @@
+components:
+    -
+        name: api
+        repo: gitbot/api
+        command: all
+        actions:
+            -
+                name: dev
+                branch: '*'
+                command: api
+                bucket: releases.dev.gitbot.test
+    -
+        name: www
+        repo: gitbot/www
+        command: all
+        actions:
+            -
+                name: dev
+                branch: '*'
+                command: www
+                version_type: build
+                bucket: releases.dev.gitbot.test
