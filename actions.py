@@ -12,8 +12,8 @@ def __dump_and_upload_result(name, data):
         f.write(yaml.dump(data))
         f.write('*********' + name + '************')
     b = Bucket(data['bucket'],
-                aws_access_key_id=data['access_key'],
-                aws_secret_access_key=data['secret'])
+                aws_access_key_id=data['keys']['access_key'],
+                aws_secret_access_key=data['keys']['secret'])
     b.make()
     b.add_file(result)
 
